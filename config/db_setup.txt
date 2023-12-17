@@ -1,0 +1,6 @@
+CREATE TABLE Car (carNumber INT PRIMARY KEY, carName VARCHAR(255) NOT NULL,Fault Varchar(255),Color varchar(20))
+CREATE TABLE Job_schedule (jobId INT AUTO_INCREMENT PRIMARY KEY,carNumber INT , carName VARCHAR(255) NOT NULL,Fault Varchar(255),Status varchar(20))
+CREATE TABLE Owner (ownerName VARCHAR(255) NOT NULL,carNumber VARCHAR(255) NOT NULL, Contact INT PRIMARY KEY,Address Varchar(255))
+
+
+

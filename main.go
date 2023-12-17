@@ -1,18 +1,22 @@
 package main
 
-import "gofr.dev/pkg/gofr"
+import (
+	"github.com/yashmangla123456/Routers"
+	"gofr.dev/pkg/gofr"
+)
 
 func main() {
-	// initialise gofr object
 	app := gofr.New()
 
 	// register route greet
-	app.GET("/greet", func(ctx *gofr.Context) (interface{}, error) {
+	Routers.Car_Route()
+	Routers.Garage_Route()
+	Routers.Job_Summary()
+	Routers.Owner_Route()
+	app.GET("/", func(ctx *gofr.Context) (interface{}, error) {
 
-		return "Data Recieved!", nil
+		return "Hello", nil
 	})
 
-	// Starts the server, it will listen on the default port 8000.
-	// it can be over-ridden through configs
 	app.Start()
 }
