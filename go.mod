@@ -1,8 +1,11 @@
 module github.com/yashmangla123456
 
-go 1.21.5
+go 1.20
 
-require gofr.dev v1.0.3
+require (
+	github.com/go-sql-driver/mysql v1.7.1
+	gofr.dev v1.0.3
+)
 
 require (
 	cloud.google.com/go v0.110.10 // indirect
@@ -46,7 +49,6 @@ require (
 	github.com/go-redis/redis/extra/rediscmd v0.2.0 // indirect
 	github.com/go-redis/redis/extra/redisotel v0.3.0 // indirect
 	github.com/go-redis/redis/v8 v8.11.5 // indirect
-	github.com/go-sql-driver/mysql v1.7.1 // indirect
 	github.com/gocql/gocql v1.6.0 // indirect
 	github.com/golang-jwt/jwt/v4 v4.5.0 // indirect
 	github.com/golang-sql/civil v0.0.0-20220223132316-b832511892a9 // indirect

@@ -1,0 +1,11 @@
+CREATE TABLE person (name VARCHAR(255) NOT NULL, contact VARCHAR(10) PRIMARY KEY, address VARCHAR(255));
+CREATE TABLE car (number VARCHAR(255) PRIMARY KEY, name VARCHAR(255) NOT NULL, color VARCHAR(20), person VARCHAR(10), FOREIGN KEY (person) REFERENCES person(contact));
+CREATE TABLE job (id INT AUTO_INCREMENT PRIMARY KEY, car VARCHAR(255), fault VARCHAR(255), status VARCHAR(50), FOREIGN KEY (car) REFERENCES car(number));
+
+
+
+docker run --name gofr-mysql -e MYSQL_ROOT_PASSWORD=root123 -e MYSQL_DATABASE=garage -p 3306:3306 -d mysql:8.0.30
+
+docker exec -it gofr-mysql mysql -uroot -proot123 garage -e "CREATE TABLE person (name VARCHAR(255) NOT NULL, contact VARCHAR(10) PRIMARY KEY, address VARCHAR(255)); CREATE TABLE car (number VARCHAR(255) PRIMARY KEY, name VARCHAR(255) NOT NULL, color VARCHAR(20), person VARCHAR(10), FOREIGN KEY (person) REFERENCES person(contact)); CREATE TABLE job (id INT AUTO_INCREMENT PRIMARY KEY, car VARCHAR(255), fault VARCHAR(255), status VARCHAR(50), FOREIGN KEY (car) REFERENCES car(number));"
+
+SELECT job.*, car.*, person.* FROM person INNER JOIN car ON person.contact = car.person INNER JOIN job ON job.car = car.number WHERE person.contact="7206077907"

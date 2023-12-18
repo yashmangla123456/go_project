@@ -7,12 +7,13 @@ import (
 
 func main() {
 	app := gofr.New()
+	//Database.Connection()
 
 	// register route greet
-	Routers.Car_Route()
-	Routers.Garage_Route()
-	Routers.Job_Summary()
-	Routers.Owner_Route()
+	routers.Car_Route(app)
+	routers.Garage_Route(app)
+	routers.Job_Summary(app)
+	routers.Person_Route(app)
 	app.GET("/", func(ctx *gofr.Context) (interface{}, error) {
 
 		return "Hello", nil
