@@ -54,28 +54,48 @@ Program will run on localhost:9000
 			This is a DELETE method API for removing records with carnumber=carNum
   
 garage_route.go
+
     /garage 
       This route fetches and display all the data related to car in garage
+
     /garage/:{status}
-      This route checks for the cars with some specific status and shows corresponding results
+    	This route checks for the cars with some specific status and shows corresponding results
+
 job_Summary.go
+
     /job_schedule/all
+    
       This route shows all the job assigned in the garage
+    
     /job_schedule:{status}
+    
       This route checks for the jobs with some specific status and shows corresponding results ,if not found it displays all records
+    
     /job_schedule/
+    
       This is a POST request that inserts the data into the database by using a body.
-        format for body: JSON format with properly named fields (Field names are mentioned in configs/db_schema)
+      format for body: JSON format with properly named fields (Field names are mentioned in configs/db_schema)
+      
       /job_schedule/{id}
-        This is a DELETE request to delete the records with specific job IDs
+      
+	This is a DELETE request to delete the records with specific job IDs
+      
       /job_schedule/{id}:{status}
-         This is a PUT method route for updating the status of the car according to their job id
+        
+	 This is a PUT method route for updating the status of the car according to their job id
+  
   person_route.go
+    
     /person
+    
       This request shows the data of all the car owners like name ,contact and address
+    
     /person/{phone}:{data}
+    
       This is a bit different route.Here we check that if there is an owner with a contact number=phone and  also has some work being performed on its car the this api will fetch that record and display the data
+   
     /person/{phone}
+    
        This route deletes the owner with contact number = phone
   
 
